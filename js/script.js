@@ -1,9 +1,13 @@
 // Variables globales
 let cart = [];
 
-// Cargar productos
 fetch('./products.json')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Error al cargar el archivo JSON: ${response.statusText}`);
+    }
+    return response.json();
+  })
   .then(data => {
     const productList = document.getElementById('product-list');
     data.products.forEach(product => {
@@ -21,7 +25,12 @@ fetch('./products.json')
         </div>`;
       productList.innerHTML += productCard;
     });
+  })
+  .catch(error => {
+    console.error('Error al cargar los productos:', error);
+    alert('No se pudo cargar el archivo de productos. Intenta más tarde.');
   });
+
 
 // Añadir al carrito
 function addToCart(id, name, price) {
