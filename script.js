@@ -1,7 +1,7 @@
 // Variables globales
 let cart = [];
 
-await fetch('./products.json')
+fetch('./products.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`Error al cargar el archivo JSON: ${response.statusText}`);
