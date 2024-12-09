@@ -18,6 +18,7 @@ fetch('./products.json')
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">${product.description}</p>
+              <p class="card-text">Category: ${product.category}</p>
               <p class="card-text"><strong>$${product.price}</strong></p>
               <button class="btn btn-primary" onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Añadir al carrito</button>
             </div>
