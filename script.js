@@ -1,7 +1,7 @@
 // Variables globales
 let cart = [];
 
-fetch('/products.json')
+await fetch('./products.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`Error al cargar el archivo JSON: ${response.statusText}`);
@@ -20,7 +20,7 @@ fetch('/products.json')
               <p class="card-text">${product.description}</p>
               <p class="card-text">Category: ${product.category}</p>
               <p class="card-text"><strong>$${product.price}</strong></p>
-              <button class="btn btn-primary" onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Añadir al carrito</button>
+              <button class="btn btn-primary" onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Add to Cart</button>
             </div>
           </div>
         </div>`;
