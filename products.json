@@ -11,6 +11,24 @@
     },
     {
       "id": 2,
+      "category": "mujer",
+      "name": "Zapato de Tacón Rojo Oscuro",
+      "description": "Elegante y perrísimo",
+      "price": 2200,
+      "size": [36, 37, 38, 39],
+      "image": "cherry-heels.jpeg"
+    },
+    {
+      "id": 3,
+      "category": "mujer",
+      "name": "Plataforma tipo Sandalias",
+      "description": "Look muy del 2000's",
+      "price": 700,
+      "size": [35, 36, 37, 38],
+      "image": "heart-heleed.jpeg"
+    },
+    {
+      "id": 5,
       "category": "hombre",
       "name": "Zapato Casual Negro",
       "description": "Perfecto para eventos formales",
