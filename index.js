@@ -8,7 +8,6 @@ fetch("./products.json")
   .then((products) => {
     const carouselContent = document.getElementById("carouselContent");
 
-    // Loop through products and generate carousel items
     products.forEach((product, index) => {
       const carouselItem = document.createElement("div");
       carouselItem.className = `carousel-item ${index === 0 ? "active" : ""}`;
