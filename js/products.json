@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "mujer",
+      "name": "Zapato de Tacón Rojo",
+      "description": "Elegante y cómodo",
+      "price": 1200,
+      "size": [35, 36, 37, 38],
+      "image": "red-heels.jpeg"
+    },
+    {
+      "id": 2,
+      "category": "hombre",
+      "name": "Zapato Casual Negro",
+      "description": "Perfecto para eventos formales",
+      "price": 1500,
+      "size": [40, 41, 42, 43],
+      "image": "black-shoes.jpeg"
+    }
+  ]
+}
