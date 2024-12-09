@@ -35,6 +35,24 @@
       "price": 1500,
       "size": [40, 41, 42, 43],
       "image": "black-shoes.jpeg"
+    },
+    {
+      "id": 6,
+      "category": "hombre",
+      "name": "Zapato Vans",
+      "description": "Perfecto para eventos casuales",
+      "price": 500,
+      "size": [40, 41, 42, 43],
+      "image": "vans-shoes.jpeg"
+    },
+    {
+      "id": 7,
+      "category": "hombre",
+      "name": "Zapato Air Force One",
+      "description": "Perfecto para eventos casuales",
+      "price": 850,
+      "size": [40, 41, 42, 43],
+      "image": "af1-force.jpeg"
     }
   ]
 }
