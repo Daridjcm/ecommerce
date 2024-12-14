@@ -1,10 +1,10 @@
-// Variables globales
+// Variable globals
 let cart = [];
 
 fetch('./products.json')
   .then(response => {
     if (!response.ok) {
-      throw new Error(`Error al cargar el archivo JSON: ${response.statusText}`);
+      throw new Error(`Error to load JSON file: ${response.statusText}`);
     }
     return response.json();
   })
@@ -28,25 +28,25 @@ fetch('./products.json')
     });
   })
   .catch(error => {
-    console.error('Error al cargar los productos:', error);
-    alert('No se pudo cargar el archivo de productos. Intenta más tarde.');
+    console.error('Error to load the products', error);
+    alert('Failed to load file, please try again later.');
   });
 
 
-// Añadir al carrito
+// Add to Cart
 function addToCart(id, name, price) {
   cart.push({ id, name, price });
   updateCartCount();
-  alert(`${name} ha sido añadido al carrito.`);
+  alert(`${name} it's was added to cart.`);
 }
 
-// Actualizar contador del carrito
+// Update Cart Count
 function updateCartCount() {
   const cartButton = document.querySelector('header button');
-  cartButton.textContent = `Carrito (${cart.length})`;
+  cartButton.textContent = `Cart (${cart.length})`;
 }
 
-// Mostrar carrito
+// Show Cart
 document.getElementById('cartModal').addEventListener('show.bs.modal', () => {
   const cartItems = document.getElementById('cart-items');
   cartItems.innerHTML = '';
@@ -54,23 +54,28 @@ document.getElementById('cartModal').addEventListener('show.bs.modal', () => {
     cartItems.innerHTML += `
       <li class="list-group-item d-flex justify-content-between align-items-center">
         ${item.name} - $${item.price}
-        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Eliminar</button>
+        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Delete</button>
       </li>`;
   });
 });
 
-// Eliminar del carrito
+// Delete from Cart
 function removeFromCart(index) {
   cart.splice(index, 1);
   updateCartCount();
   document.querySelector('#cartModal').dispatchEvent(new Event('show.bs.modal')); // Refrescar modal
 }
 
-// Comprar
-document.getElementById('checkout-btn').addEventListener('click', () => {
-  alert('Gracias por tu compra.');
-  cart = [];
+// Checkout
+document.getElementById('checkout-btn').addEventListener('click', (name, id) => {
+  cart.push({ name, id });
+  alert(`You was asked a ${name} with ID.${id}. Thanks for the shop!`);
   updateCartCount();
-  const cartItems = document.getElementById('cart-items');
-  cartItems.innerHTML = '';
+  finishShop();
 });
+
+const finishShop = () => {
+  const cartItems = document.getElementById('cart-items');
+  cart = [];
+  cartItems.innerHTML = '';
+}
