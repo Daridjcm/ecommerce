@@ -67,15 +67,10 @@ function removeFromCart(index) {
 }
 
 // Checkout
-document.getElementById('checkout-btn').addEventListener('click', (name, id) => {
-  cart.push({ name, id });
+document.getElementById('checkout-btn').addEventListener('click', ({name, id} = cart) => {
   alert(`You was asked a ${name} with ID.${id}. Thanks for the shop!`);
   updateCartCount();
-  finishShop();
-});
-
-const finishShop = () => {
   const cartItems = document.getElementById('cart-items');
   cart = [];
   cartItems.innerHTML = '';
-}
+});
