@@ -67,10 +67,17 @@ function removeFromCart(index) {
 }
 
 // Checkout
-document.getElementById('checkout-btn').addEventListener('click', ([{name, id}] = cart) => {
-  alert(`You was asked a ${name} with ID.${id}. Thanks for the shop!`);
+document.getElementById('checkout-btn').addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert('Your cart is empty. Add some products before checking out.');
+    return;
+  }
+
+  const [{ name, id }] = cart;
+  alert(`You have purchased ${name} with ID ${id}. Thanks for your shop!`);
+  
+  cart = [];
   updateCartCount();
   const cartItems = document.getElementById('cart-items');
-  cart = [];
   cartItems.innerHTML = '';
 });
